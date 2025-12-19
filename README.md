@@ -223,5 +223,3 @@ This script teaches password validation concepts. In real-world applications:
 - Implement additional checks (dictionary words, common passwords, etc.)
 
 ---
-
-**This completes Exercise 1!** 🎉
