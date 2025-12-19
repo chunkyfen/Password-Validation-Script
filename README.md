@@ -221,5 +221,3 @@ This script teaches password validation concepts. In real-world applications:
 - Hash passwords before storage (using bcrypt, scrypt, or Argon2)
 - Consider using password managers
 - Implement additional checks (dictionary words, common passwords, etc.)
-
----
