@@ -210,14 +210,3 @@ Here are examples to test the script:
 8. **Boolean Logic:** Working with true/false values
 9. **User Experience:** Providing clear, colored, detailed feedback
 10. **Code Comments:** Documenting code for future developers
-
----
-
-## **SECURITY NOTE**
-
-This script teaches password validation concepts. In real-world applications:
-- Never store passwords in plain text
-- Use `Read-Host -AsSecureString` for password input
-- Hash passwords before storage (using bcrypt, scrypt, or Argon2)
-- Consider using password managers
-- Implement additional checks (dictionary words, common passwords, etc.)
