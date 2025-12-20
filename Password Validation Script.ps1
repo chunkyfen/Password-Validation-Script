@@ -1,9 +1,7 @@
-# ============================================================================
+
 # EXERCISE 1: PASSWORD STRENGTH VALIDATOR
-# ============================================================================
 # This script prompts the user to enter a password and validates it against
 # security criteria. It provides visual feedback using colored text.
-# ============================================================================
 
 # Display a welcome message to the user
 Write-Host "========================================" -ForegroundColor Cyan
@@ -19,15 +17,14 @@ $password = Read-Host
 
 # Display the validation criteria to the user
 Write-Host "`nValidating against the following criteria:" -ForegroundColor Cyan
-Write-Host "  • At least 8 characters" -ForegroundColor Gray
-Write-Host "  • At least one lowercase letter (a-z)" -ForegroundColor Gray
-Write-Host "  • At least one uppercase letter (A-Z)" -ForegroundColor Gray
-Write-Host "  • At least one special character (! | » / $ % ? & * ( ) _ + < > [ ] ^ { })" -ForegroundColor Gray
+Write-Host "  At least 8 characters" -ForegroundColor Gray
+Write-Host "  At least one lowercase letter (a-z)" -ForegroundColor Gray
+Write-Host "  At least one uppercase letter (A-Z)" -ForegroundColor Gray
+Write-Host "  At least one special character (! | » / $ % ? & * ( ) _ + < > [ ] ^ { })" -ForegroundColor Gray
 Write-Host ""
 
-# ============================================================================
+
 # VALIDATION LOGIC - Each criterion is checked individually
-# ============================================================================
 
 # CRITERION 1: Check if password has at least 8 characters
 # The .Length property returns the number of characters in the string
@@ -48,17 +45,13 @@ $hasUppercase = $password -cmatch "[A-Z]"
 # have special meaning in regular expressions
 $hasSpecialChar = $password -match "[!|»/$%?&*()\-_+<>\[\]^{}]"
 
-# ============================================================================
 # DETERMINE IF PASSWORD IS VALID
-# ============================================================================
 
 # The password is valid ONLY if ALL four criteria are met
 # The -and operator requires all conditions to be true
 $isValid = $hasMinLength -and $hasLowercase -and $hasUppercase -and $hasSpecialChar
 
-# ============================================================================
 # DISPLAY DETAILED FEEDBACK TO THE USER
-# ============================================================================
 
 Write-Host "Validation Results:" -ForegroundColor Cyan
 Write-Host "-------------------" -ForegroundColor Cyan
@@ -66,27 +59,27 @@ Write-Host "-------------------" -ForegroundColor Cyan
 # Show the status of each criterion with color coding
 # Green checkmark (✓) for passed criteria, Red X (✗) for failed criteria
 if ($hasMinLength) {
-    Write-Host "  ✓ Minimum 8 characters: PASSED" -ForegroundColor Green
+    Write-Host "  Minimum 8 characters: PASSED" -ForegroundColor Green
 } else {
-    Write-Host "  ✗ Minimum 8 characters: FAILED (Current: $($password.Length) characters)" -ForegroundColor Red
+    Write-Host "  Minimum 8 characters: FAILED (Current: $($password.Length) characters)" -ForegroundColor Red
 }
 
 if ($hasLowercase) {
-    Write-Host "  ✓ Lowercase letter: PASSED" -ForegroundColor Green
+    Write-Host "  Lowercase letter: PASSED" -ForegroundColor Green
 } else {
-    Write-Host "  ✗ Lowercase letter: FAILED" -ForegroundColor Red
+    Write-Host "  Lowercase letter: FAILED" -ForegroundColor Red
 }
 
 if ($hasUppercase) {
-    Write-Host "  ✓ Uppercase letter: PASSED" -ForegroundColor Green
+    Write-Host "  Uppercase letter: PASSED" -ForegroundColor Green
 } else {
-    Write-Host "  ✗ Uppercase letter: FAILED" -ForegroundColor Red
+    Write-Host "  Uppercase letter: FAILED" -ForegroundColor Red
 }
 
 if ($hasSpecialChar) {
-    Write-Host "  ✓ Special character: PASSED" -ForegroundColor Green
+    Write-Host "  Special character: PASSED" -ForegroundColor Green
 } else {
-    Write-Host "  ✗ Special character: FAILED" -ForegroundColor Red
+    Write-Host "  Special character: FAILED" -ForegroundColor Red
 }
 
 Write-Host ""
